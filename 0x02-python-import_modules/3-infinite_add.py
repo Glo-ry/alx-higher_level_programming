@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
-import sys
-
-def calculate_sum():
-    """Calculate the sum of all arguments."""
-    total = sum(int(arg) for arg in sys.argv[1:])
-    return total
-
 if __name__ == "__main__":
-    print(calculate_sum())
+    """Print the addition of all arguments."""
+    import sys
+
+    total = 0
+    for i in range(len(sys.argv) - 1):
+        total += int(sys.argv[i + 1])
+    print("{}".format(total))
