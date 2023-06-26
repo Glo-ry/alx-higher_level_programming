@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def safe_print_list_integers(my_list=[], x=0):
     """
     Print the first x elements of a list that are integers.
@@ -9,14 +11,13 @@ def safe_print_list_integers(my_list=[], x=0):
     Returns:
         The number of elements printed.
     """
-    count = 0
-    try:
-        for i in range(x):
-            if isinstance(my_list[i], int):
-                print("{:d}".format(my_list[i]), end="")
-                count += 1
-    except IndexError:
-        pass
-
+    ret = 0
+    for l in range(0, x):
+        try:
+            if isinstance(my_list[l], int):
+                print("{:d}".format(my_list[l]), end="")
+                ret += 1
+        except IndexError:
+            break
     print("")
-    return count
+    return ret
