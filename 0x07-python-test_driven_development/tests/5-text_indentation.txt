@@ -1,0 +1,52 @@
+The `text_indentation` Function
+======================
+
+Prototype:
+    def text_indentation(text)
+
+Description:
+    The `text_indentation` function prints the provided text with two new lines after each occurrence of the characters '.', '?' and ':'. The `text` parameter must be a string. If the argument is not of the expected type, a TypeError exception is raised. The printed lines should not have any spaces at the beginning or end.
+
+Tests
+-------------------
+
+Checking indentation for a simple text:
+    >>> text = "This is a simple text."
+    >>> text_indentation(text)
+    This is a simple text.
+
+
+Checking indentation for a text with multiple sentences:
+    >>> text = "This is the first sentence. This is the second sentence."
+    >>> text_indentation(text)
+    This is the first sentence.
+
+    This is the second sentence.
+
+
+Checking indentation for a text with question marks and colons:
+    >>> text = "What is your name? My name is John: nice to meet you."
+    >>> text_indentation(text)
+    What is your name?
+
+    My name is John:
+    nice to meet you.
+
+
+Checking indentation for a text with extra spaces:
+    >>> text = "   This is a text with extra spaces.   "
+    >>> text_indentation(text)
+    This is a text with extra spaces.
+
+
+Checking indentation for an empty text:
+    >>> text = ""
+    >>> text_indentation(text)
+
+
+Checking indentation for a non-string input:
+    >>> text = 123
+    >>> text_indentation(text)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string

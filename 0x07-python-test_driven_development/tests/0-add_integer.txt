@@ -1,0 +1,69 @@
+The `add_integer` Function
+======================
+
+Prototype:
+    def add_integer(a, b=98)
+
+Description:
+    The `add_integer` function adds two integers and returns the result. It takes two arguments, `a` and `b`, which must be integers or floats. If either `a` or `b` is not an integer or float, a TypeError exception is raised with the message "a must be an integer" or "b must be an integer". If `a` or `b` is a float, they are first casted to integers before performing the addition.
+
+Tests
+-------------------
+
+Checking addition of two integers:
+    >>> add_integer(2, 3)
+    5
+
+Checking addition of a float and an integer:
+    >>> add_integer(2.1, 4)
+    6
+
+Checking addition of an integer and a float:
+    >>> add_integer(5, 7.8)
+    12
+
+Checking addition of two floats:
+    >>> add_integer(2.45, 3.1)
+    5
+
+Checking addition with default value for b:
+    >>> add_integer(7)
+    105
+
+Checking addition with non-integer or non-float value for a:
+   integer() missing 1 required positional argument: 'a'
+
+ >>> add_integer([1], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Checking addition with non-integer or non-float value for b:
+    >>> add_integer(3, "2")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+Checking addition with non-integer or non-float values for both a and b:
+    >>> add_integer((2,), {"key": "value"})
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Checking addition with bool value for a:
+    >>> add_integer(True, 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Checking addition with bool value for b:
+    >>> add_integer(0, False)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+Checking addition with missing arguments:
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_

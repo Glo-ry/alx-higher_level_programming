@@ -1,0 +1,50 @@
+The `say_my_name` Function
+======================
+
+Prototype:
+    def say_my_name(first_name, last_name="")
+
+Description:
+    The `say_my_name` function prints a message with the given first name and last name. If a last name is not provided, the function will only use the first name. Both `first_name` and `last_name` must be strings. If any of the arguments are not of the expected type, a TypeError exception is raised.
+
+Tests
+-------------------
+
+Checking printing of full name:
+    >>> first_name = "John"
+    >>> last_name = "Doe"
+    >>> say_my_name(first_name, last_name)
+    My name is John Doe
+
+Checking printing of first name only:
+    >>> first_name = "Alice"
+    >>> say_my_name(first_name)
+    My name is Alice
+
+Checking printing with empty first name:
+    >>> first_name = ""
+    >>> last_name = "Smith"
+    >>> say_my_name(first_name, last_name)
+    My name is  Smith
+
+Checking printing with empty first and last names:
+    >>> first_name = ""
+    >>> last_name = ""
+    >>> say_my_name(first_name, last_name)
+    My name is 
+
+Checking printing with non-string first name:
+    >>> first_name = 123
+    >>> last_name = "Doe"
+    >>> say_my_name(first_name, last_name)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Checking printing with non-string last name:
+    >>> first_name = "John"
+    >>> last_name = 123
+    >>> say_my_name(first_name, last_name)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
