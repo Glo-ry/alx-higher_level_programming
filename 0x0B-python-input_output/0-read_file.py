@@ -1,14 +1,17 @@
 #!/usr/bin/python3
-lookup = __import__('0-lookup').lookup
 
-class MyClass1(object):
-    pass
+"""
+A Function that reads a text file (UTF8) and prints it to stdout:
+"""
 
-class MyClass2(object):
-    my_attr1 = 3
-    def my_meth(self):
-        pass
 
-print(lookup(MyClass1))
-print(lookup(MyClass2))
-print(lookup(int))
+def read_file(filename=""):
+    """
+    Reads a text file (UTF-8) and prints its contents to stdout.
+
+    Args:
+        filename (str): Name of the file to read (default: "").
+    """
+    with open(filename, "r", encoding="utf-8") as file:
+        for line in file:
+            print(line, end="")
